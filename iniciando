@@ -1,0 +1,19 @@
+/moodspace
+│
+├── /client         # Frontend React
+│   ├── /src
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── assets/
+│   │   └── App.jsx
+│   └── tailwind.config.js
+│
+├── /server         # Backend Express
+│   ├── /routes
+│   ├── /models
+│   ├── index.js
+│   └── .env
+│
+├── README.md
+├── package.json
+└── .gitignore
