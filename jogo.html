@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Adivinhação</title>
+</head>
+<body>
+    <h1>🎯 Jogo de Adivinhação</h1>
+    <p>Tente adivinhar o número secreto entre 1 e 10!</p>
+    <input type="number" id="palpite" min="1" max="10" placeholder="Seu palpite">
+    <button onclick="verificar()">Enviar</button>
+    <p id="resultado"></p>
+
+    <script>
+        const numeroSecreto = Math.floor(Math.random() * 10) + 1;
+        let tentativas = 0;
+
+        function verificar() {
+            const palpite = parseInt(document.getElementById("palpite").value);
+            tentativas++;
+
+            if (isNaN(palpite) || palpite < 1 || palpite > 10) {
+                document.getElementById("resultado").textContent = "⚠️ Digite um número válido entre 1 e 10!";
+            } else if (palpite === numeroSecreto) {
+                document.getElementById("resultado").textContent = `🎉 Parabéns! Você acertou em ${tentativas} tentativas.`;
+            } else if (palpite < numeroSecreto) {
+                document.getElementById("resultado").textContent = "🔼 O número secreto é maior!";
+            } else {
+                document.getElementById("resultado").textContent = "🔽 O número secreto é menor!";
+            }
+        }
+    </script>
+</body>
+</html>
